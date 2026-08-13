@@ -1,22 +1,2033 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Viewer</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aroga Foods | Wood Pressed Coconut Oil</title>
+
+<meta name="description"
+content="Discover the journey of Aroga Foods Wood Pressed Coconut Oil — from carefully selected coconuts to your kitchen.">
+
+<style>
+
+/* =====================================================
+   AROGA FOODS - WOOD PRESSED COCONUT OIL
+   COMPLETE ONE PAGE WEBSITE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf0;
+    color: #26351f;
+    overflow-x: hidden;
+}
+
+:root {
+    --green: #244b2b;
+    --dark-green: #17371e;
+    --light-green: #eaf2df;
+    --cream: #fff8e9;
+    --wood: #9a6138;
+    --wood-dark: #653b24;
+    --gold: #d9a441;
+    --white: #ffffff;
+    --text: #5e6859;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    background: rgba(255,250,240,0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(36,75,43,0.1);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--green);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 140px 8% 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 80% 25%, #f1dfad 0%, transparent 30%),
+        linear-gradient(135deg,#fffaf0,#edf3df);
+}
+
+.hero-content {
+    max-width: 650px;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 50px;
+
+    background: var(--light-green);
+    color: var(--green);
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+    animation: fadeDown 1s ease;
+}
+
+.hero h1 {
+    font-size: clamp(45px,7vw,82px);
+
+    line-height: 0.95;
+
+    color: var(--dark-green);
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1s ease;
+}
+
+.hero h1 span {
+    color: var(--wood);
+}
+
+.hero p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: var(--text);
+
+    max-width: 580px;
+
+    animation: fadeUp 1.3s ease;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 27px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--dark-green);
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    border: 2px solid var(--green);
+    color: var(--green);
+}
+
+.btn-outline:hover {
+    background: var(--green);
+    color: white;
+}
+
+
+/* =====================================================
+   HERO COCONUT
+===================================================== */
+
+.coconut-area {
+    width: 420px;
+    height: 420px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coconut {
+    width: 260px;
+    height: 260px;
+
+    background:
+        radial-gradient(circle at 35% 30%,#6b422a,#2c190f 70%);
+
+    border-radius: 50%;
+
+    position: relative;
+
+    box-shadow:
+        0 30px 70px rgba(50,30,15,0.25);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.coconut::after {
+    content: "🥥";
+
+    font-size: 150px;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.2));
+}
+
+.oil-drop {
+    position: absolute;
+
+    width: 25px;
+    height: 35px;
+
+    background: var(--gold);
+
+    border-radius: 50% 50% 55% 55%;
+
+    animation: drop 4s infinite;
+}
+
+.drop1 {
+    top: 20px;
+    right: 50px;
+}
+
+.drop2 {
+    bottom: 70px;
+    left: 30px;
+
+    animation-delay: 1.5s;
+}
+
+.drop3 {
+    top: 100px;
+    left: 10px;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.section-title small {
+    color: var(--gold);
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(34px,5vw,55px);
+
+    color: var(--dark-green);
+
+    margin: 15px 0;
+}
+
+.section-title p {
+    color: #687062;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   MANUFACTURING PROCESS
+===================================================== */
+
+.process {
+    background: var(--white);
+}
+
+.process-grid {
+    margin-top: 65px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.process-card {
+    padding: 35px 28px;
+
+    background: #fffaf0;
+
+    border-radius: 25px;
+
+    border: 1px solid #eee2c8;
+
+    transition: 0.4s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.process-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 20px 50px rgba(36,75,43,0.12);
+}
+
+.process-number {
+    font-size: 45px;
+
+    font-weight: 900;
+
+    color: #e4d6b7;
+}
+
+.process-icon {
+    font-size: 55px;
+
+    margin: 10px 0 20px;
+}
+
+.process-card h3 {
+    color: var(--green);
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    color: var(--text);
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   WOOD PRESS SECTION
+===================================================== */
+
+.wood-section {
+    background:
+        linear-gradient(
+            rgba(50,28,15,0.9),
+            rgba(50,28,15,0.94)
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #8b5530,
+            #8b5530 20px,
+            #714126 20px,
+            #714126 40px
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.wood-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.wood-content h2 {
+    font-size: clamp(38px,6vw,65px);
+
+    margin: 15px 0 25px;
+}
+
+.wood-content h2 span {
+    color: #f0c35a;
+}
+
+.wood-content p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #eadfce;
+}
+
+.press-animation {
+    margin: 60px auto 0;
+
+    max-width: 700px;
+
+    height: 180px;
+
+    position: relative;
+}
+
+.wood-log {
+    position: absolute;
+
+    left: 10%;
+    bottom: 25px;
+
+    width: 80%;
+    height: 55px;
+
+    border-radius: 40px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #a9683d,
+            #a9683d 30px,
+            #7d4728 32px,
+            #7d4728 35px
+        );
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,0.3);
+}
+
+.press-head {
+    position: absolute;
+
+    left: 35%;
+    top: 5px;
+
+    width: 30%;
+    height: 65px;
+
+    border-radius: 12px;
+
+    background: #d5b184;
+
+    animation:
+        pressMove 3s ease-in-out infinite;
+}
+
+.press-oil {
+    position: absolute;
+
+    left: 48%;
+    bottom: 70px;
+
+    width: 18px;
+    height: 65px;
+
+    background:
+        linear-gradient(#f3c653,#b67a13);
+
+    border-radius: 20px;
+
+    animation: oilFlow 3s infinite;
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits {
+    background: #f2f6e9;
+}
+
+.benefit-grid {
+    margin-top: 60px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 20px;
+}
+
+.benefit-card {
+    padding: 30px 22px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    transition: 0.35s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-card .icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    color: var(--green);
+
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    color: var(--text);
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CUSTOMER GUIDE
+===================================================== */
+
+.customer-guide {
+    background: #fffaf0;
+}
+
+.guide-grid {
+    max-width: 1150px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 25px;
+}
+
+.guide-card {
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfc8;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.guide-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(36,75,43,0.12);
+}
+
+.guide-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    background: var(--gold);
+}
+
+.guide-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.guide-card h3 {
+    color: var(--green);
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.guide-card p {
+    color: var(--text);
+
+    line-height: 1.7;
+}
+
+.guide-card ul {
+    list-style: none;
+
+    margin-top: 15px;
+}
+
+.guide-card li {
+    margin: 13px 0;
+
+    color: #596454;
+
+    line-height: 1.6;
+}
+
+.guide-card li::before {
+    content: "✓";
+
+    color: var(--gold);
+
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+
+/* =====================================================
+   NUTRITION
+===================================================== */
+
+.nutrition-card {
+    grid-column: span 2;
+
+    background:
+        linear-gradient(
+            135deg,
+            #244b2b,
+            #17371e
+        );
+
+    color: white;
+}
+
+.nutrition-card h3 {
+    color: white;
+}
+
+.nutrition-card p {
+    color: #dce7d8;
+}
+
+.nutrition-highlight {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.nutrition-item {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.1);
+
+    text-align: center;
+}
+
+.nutrition-item strong {
+    display: block;
+
+    font-size: 22px;
+
+    color: #f0c35a;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   WARNING
+===================================================== */
+
+.warning-card {
+    background: #fff5e5;
+}
+
+.warning-card li::before {
+    content: "!";
+    color: #c77716;
+}
+
+
+/* =====================================================
+   STORAGE
+===================================================== */
+
+.storage-card {
+    background: #eef5e8;
+}
+
+.storage-card li::before {
+    content: "●";
+}
+
+
+/* =====================================================
+   QUALITY
+===================================================== */
+
+.info {
+    background: white;
+}
+
+.info-container {
+    max-width: 1100px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.info-box {
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background: #fffaf0;
+
+    border: 1px solid #eadfc8;
+}
+
+.info-box h3 {
+    color: var(--green);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box li {
+    margin: 15px 0;
+
+    color: var(--text);
+
+    line-height: 1.6;
+}
+
+.info-box li::before {
+    content: "✓";
+
+    color: var(--gold);
+
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #527c46,
+            transparent 35%
+        ),
+        var(--dark-green);
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: clamp(38px,6vw,65px);
+
+    margin-bottom: 20px;
+}
+
+.cta p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d9e2d4;
+
+    line-height: 1.7;
+}
+
+.cta-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    background: #e9b94f;
+
+    color: #24351f;
+
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 30px 8%;
+
+    background: #102516;
+
+    color: #aebca9;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition: 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes floating {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(3deg);
     }
-  </style>
+
+}
+
+@keyframes drop {
+
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(80px);
+        opacity: 0;
+    }
+
+}
+
+@keyframes pressMove {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(65px);
+    }
+
+}
+
+@keyframes oilFlow {
+
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+
+    40% {
+        height: 65px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 90px;
+        opacity: 0;
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+
+        flex-direction: column;
+
+        padding-top: 130px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .coconut-area {
+        margin-top: 50px;
+
+        width: 300px;
+        height: 300px;
+    }
+
+    .coconut {
+        width: 200px;
+        height: 200px;
+    }
+
+    .coconut::after {
+        font-size: 110px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width:700px) {
+
+    .guide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nutrition-card {
+        grid-column: span 1;
+    }
+
+    .nutrition-highlight {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width:550px) {
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .press-animation {
+        transform: scale(0.8);
+    }
+
+}
+
+</style>
+
 </head>
 
+
 <body>
-  <iframe src="images (6).jfif"></iframe>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        AROGA <span>FOODS</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#journey">
+                Process
+            </a>
+        </li>
+
+        <li>
+            <a href="#woodpress">
+                Wood Press
+            </a>
+        </li>
+
+        <li>
+            <a href="#benefits">
+                Benefits
+            </a>
+        </li>
+
+        <li>
+            <a href="#guide">
+                Guide
+            </a>
+        </li>
+
+        <li>
+            <a href="#quality">
+                Quality
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🌿 Traditionally Wood Pressed
+        </div>
+
+        <h1>
+            From <span>Coconut</span>
+            <br>
+            To Pure Oil.
+        </h1>
+
+        <p>
+            Discover the traditional journey behind
+            Aroga Foods Wood Pressed Coconut Oil —
+            carefully made from selected coconuts
+            and handled with care.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#journey"
+                class="btn btn-primary">
+
+                Discover The Journey ↓
+
+            </a>
+
+            <a
+                href="#guide"
+                class="btn btn-outline">
+
+                Know Your Oil
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="coconut-area">
+
+        <div class="coconut"></div>
+
+        <div class="oil-drop drop1"></div>
+
+        <div class="oil-drop drop2"></div>
+
+        <div class="oil-drop drop3"></div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MANUFACTURING JOURNEY
+===================================================== -->
+
+<section
+    id="journey"
+    class="process">
+
+    <div class="section-title reveal">
+
+        <small>
+            THE JOURNEY
+        </small>
+
+        <h2>
+            How Our Coconut Oil Is Made
+        </h2>
+
+        <p>
+            Good oil begins with good raw material
+            and careful processing. Follow the journey
+            from coconut to bottle.
+        </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <div class="process-icon">
+                🥥
+            </div>
+
+            <h3>
+                Selected Coconuts
+            </h3>
+
+            <p>
+                Carefully selected coconuts are prepared
+                for the oil extraction process.
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <div class="process-icon">
+                🌴
+            </div>
+
+            <h3>
+                Preparation
+            </h3>
+
+            <p>
+                Coconut material is cleaned and prepared
+                before entering the traditional pressing process.
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <div class="process-icon">
+                🪵
+            </div>
+
+            <h3>
+                Wood Pressing
+            </h3>
+
+            <p>
+                The prepared coconut is mechanically pressed
+                using a traditional wood-press extraction method.
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                04
+            </div>
+
+            <div class="process-icon">
+                💧
+            </div>
+
+            <h3>
+                Oil Collection
+            </h3>
+
+            <p>
+                The extracted oil is carefully collected
+                and handled with attention to cleanliness.
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                05
+            </div>
+
+            <div class="process-icon">
+                🔬
+            </div>
+
+            <h3>
+                Quality Check
+            </h3>
+
+            <p>
+                The oil undergoes quality checks before
+                being prepared for packaging.
+            </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+            <div class="process-number">
+                06
+            </div>
+
+            <div class="process-icon">
+                🫙
+            </div>
+
+            <h3>
+                Hygienic Bottling
+            </h3>
+
+            <p>
+                The finished oil is hygienically packed
+                and prepared for your kitchen.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WOOD PRESS
+===================================================== -->
+
+<section
+    id="woodpress"
+    class="wood-section">
+
+    <div class="wood-content reveal">
+
+        <small>
+            TRADITION MEETS CARE
+        </small>
+
+        <h2>
+            The Beauty of
+            <span>Wood Pressing</span>
+        </h2>
+
+        <p>
+            Wood pressing is a traditional mechanical method
+            of extracting oil. It focuses on mechanical
+            extraction and careful handling rather than
+            intensive refining.
+        </p>
+
+    </div>
+
+
+    <div class="press-animation">
+
+        <div class="press-head"></div>
+
+        <div class="press-oil"></div>
+
+        <div class="wood-log"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BENEFITS
+===================================================== -->
+
+<section
+    id="benefits"
+    class="benefits">
+
+    <div class="section-title reveal">
+
+        <small>
+            WHY COCONUT OIL?
+        </small>
+
+        <h2>
+            A Versatile Natural Oil
+        </h2>
+
+        <p>
+            Coconut oil is widely valued for its versatility
+            and is commonly used in cooking and personal-care
+            routines.
+        </p>
+
+    </div>
+
+
+    <div class="benefit-grid">
+
+
+        <div class="benefit-card reveal">
+
+            <div class="icon">
+                🍳
+            </div>
+
+            <h3>
+                Cooking
+            </h3>
+
+            <p>
+                A versatile oil commonly used
+                in a variety of cooking preparations.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card reveal">
+
+            <div class="icon">
+                🌿
+            </div>
+
+            <h3>
+                Natural Choice
+            </h3>
+
+            <p>
+                A naturally derived oil for people
+                looking for traditionally processed oils.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card reveal">
+
+            <div class="icon">
+                💆
+            </div>
+
+            <h3>
+                Hair Care
+            </h3>
+
+            <p>
+                Traditionally used in hair and
+                scalp care routines.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card reveal">
+
+            <div class="icon">
+                ✨
+            </div>
+
+            <h3>
+                Skin Care
+            </h3>
+
+            <p>
+                Commonly used as a moisturizing
+                oil in personal-care routines.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CUSTOMER GUIDE
+===================================================== -->
+
+<section
+    id="guide"
+    class="customer-guide">
+
+    <div class="section-title reveal">
+
+        <small>
+            USE IT RIGHT
+        </small>
+
+        <h2>
+            Get More From Your Coconut Oil
+        </h2>
+
+        <p>
+            Simple information to help you understand,
+            use and store your Aroga Foods Wood Pressed
+            Coconut Oil.
+        </p>
+
+    </div>
+
+
+    <div class="guide-grid">
+
+
+        <!-- FOCUS POINTS -->
+
+        <div class="guide-card reveal">
+
+            <div class="guide-icon">
+                🔎
+            </div>
+
+            <h3>
+                Focus Points
+            </h3>
+
+            <p>
+                Things to know when choosing
+                and using coconut oil.
+            </p>
+
+            <ul>
+
+                <li>
+                    Check the product name,
+                    ingredients and label information.
+                </li>
+
+                <li>
+                    Check the packaging seal
+                    before use.
+                </li>
+
+                <li>
+                    Use clean and dry utensils
+                    when handling the oil.
+                </li>
+
+                <li>
+                    Keep the bottle closed
+                    when not in use.
+                </li>
+
+                <li>
+                    Always check the best-before
+                    date printed on the pack.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- HOW TO USE -->
+
+        <div class="guide-card reveal">
+
+            <div class="guide-icon">
+                🍳
+            </div>
+
+            <h3>
+                How to Use
+            </h3>
+
+            <p>
+                Coconut oil can be used in everyday
+                cooking and traditional personal-care routines.
+            </p>
+
+            <ul>
+
+                <li>
+                    Use for sautéing and everyday cooking.
+                </li>
+
+                <li>
+                    Add to suitable recipes
+                    according to your preference.
+                </li>
+
+                <li>
+                    It can be used in traditional
+                    hair-care routines.
+                </li>
+
+                <li>
+                    It may also be used as a
+                    moisturizing oil in personal care.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- NUTRITION -->
+
+        <div class="guide-card nutrition-card reveal">
+
+            <div class="guide-icon">
+                🥥
+            </div>
+
+            <h3>
+                Nutritional Highlights
+            </h3>
+
+            <p>
+                Coconut oil is primarily composed of fat.
+                Fat provides approximately 9 kcal per gram.
+                Always refer to the actual nutrition label
+                of your specific Aroga Foods product for
+                exact values.
+            </p>
+
+
+            <div class="nutrition-highlight">
+
+
+                <div class="nutrition-item">
+
+                    <strong>
+                        Fat
+                    </strong>
+
+                    Main nutritional component
+
+                </div>
+
+
+                <div class="nutrition-item">
+
+                    <strong>
+                        ~9 kcal/g
+                    </strong>
+
+                    Energy from fat
+
+                </div>
+
+
+                <div class="nutrition-item">
+
+                    <strong>
+                        0g*
+                    </strong>
+
+                    Protein
+
+                </div>
+
+
+            </div>
+
+            <p style="font-size:12px;margin-top:20px;">
+                *Use the nutrition information printed
+                on your actual product label as the final reference.
+            </p>
+
+        </div>
+
+
+        <!-- WHAT NOT TO DO -->
+
+        <div class="guide-card warning-card reveal">
+
+            <div class="guide-icon">
+                ⚠️
+            </div>
+
+            <h3>
+                What Not To Do
+            </h3>
+
+            <p>
+                Simple precautions can help maintain
+                the quality of your oil.
+            </p>
+
+            <ul>
+
+                <li>
+                    Do not use a wet or dirty spoon
+                    inside the bottle.
+                </li>
+
+                <li>
+                    Do not leave the bottle open
+                    for long periods.
+                </li>
+
+                <li>
+                    Do not store it near direct sunlight
+                    or excessive heat.
+                </li>
+
+                <li>
+                    Do not use the product after
+                    its best-before date.
+                </li>
+
+                <li>
+                    Do not assume that consuming
+                    more oil means more health benefits.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- STORAGE -->
+
+        <div class="guide-card storage-card reveal">
+
+            <div class="guide-icon">
+                🫙
+            </div>
+
+            <h3>
+                Storage Guide
+            </h3>
+
+            <p>
+                Proper storage helps maintain
+                the quality of coconut oil.
+            </p>
+
+            <ul>
+
+                <li>
+                    Store in a cool and dry place.
+                </li>
+
+                <li>
+                    Keep away from direct sunlight.
+                </li>
+
+                <li>
+                    Keep the cap tightly closed.
+                </li>
+
+                <li>
+                    Avoid introducing water
+                    or moisture into the bottle.
+                </li>
+
+                <li>
+                    Follow the storage instructions
+                    printed on the product label.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUALITY
+===================================================== -->
+
+<section
+    id="quality"
+    class="info">
+
+    <div class="section-title reveal">
+
+        <small>
+            KNOW YOUR OIL
+        </small>
+
+        <h2>
+            What Makes A Good Coconut Oil?
+        </h2>
+
+        <p>
+            From raw material selection to packaging,
+            every stage deserves attention.
+        </p>
+
+    </div>
+
+
+    <div class="info-container">
+
+
+        <div class="info-box reveal">
+
+            <h3>
+                🌴 From Raw Material
+            </h3>
+
+            <ul>
+
+                <li>
+                    Carefully selected coconut material.
+                </li>
+
+                <li>
+                    Clean and controlled preparation.
+                </li>
+
+                <li>
+                    Traditional mechanical extraction.
+                </li>
+
+                <li>
+                    Careful filtration and handling.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-box reveal">
+
+            <h3>
+                🫙 From Press To Bottle
+            </h3>
+
+            <ul>
+
+                <li>
+                    Quality checks during processing.
+                </li>
+
+                <li>
+                    Hygienic packaging.
+                </li>
+
+                <li>
+                    Proper storage recommended.
+                </li>
+
+                <li>
+                    Made for everyday use.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="reveal">
+
+        <h2>
+            Know Your Oil.
+            <br>
+            Know Its Journey.
+        </h2>
+
+        <p>
+            At Aroga Foods, we believe customers deserve
+            to understand what goes into the products
+            they bring home.
+        </p>
+
+
+        <!-- CHANGE THIS NUMBER -->
+
+        <a
+            href="https://wa.me/918452017612"
+            target="_blank"
+            class="cta-button">
+
+            💬 Talk To Aroga Foods
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Aroga Foods.
+    All Rights Reserved.
+
+    <br><br>
+
+    Traditionally Inspired
+    • Carefully Processed
+    • Hygienically Packed
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+
+function revealOnScroll() {
+
+    reveals.forEach(element => {
+
+        const windowHeight =
+        window.innerHeight;
+
+        const elementTop =
+        element.getBoundingClientRect().top;
+
+        const revealPoint = 120;
+
+
+        if (
+            elementTop <
+            windowHeight - revealPoint
+        ) {
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+
+revealOnScroll();
+
+</script>
+
+
 </body>
 </html>
